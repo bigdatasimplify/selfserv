@@ -1,0 +1,4 @@
+{"db_cnx_file":"../config/db_cnx.json",
+ "db_sql_file":"../config/db_sql.json",
+ "db_jar_file":"../config/db_jar.json"
+}

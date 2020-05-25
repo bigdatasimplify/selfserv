@@ -1,0 +1,5 @@
+{"listObjects":{"oracle":"select schema_nm||'.'||table_nm table_nm from (select owner schema_nm, table_name table_nm from all_tables) t where ",
+                "mysql":"select * from dual",
+				"postgres":"select schema_nm||'.'||table_nm table_nm from (select table_schema schema_nm, table_name table_nm from information_schema.tables) t where " 
+				}
+}
