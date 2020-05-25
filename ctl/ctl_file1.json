@@ -1,0 +1,52 @@
+{
+    "batch": {
+        "batch_desc": "real1", 
+        "batch_nm": "real1", 
+        "batch_type": "db2hive_reg"
+    }, 
+    "job": {
+        "sqoop_job_nm": "real1_edw_customer", 
+        "sqoop_job_type": "db2hive_reg"
+    }, 
+    "source_cnx_nm": "pg_edw", 
+    "source_extract": {
+        "db_schema_nm": "edw", 
+        "db_table_nm": "customer", 
+        "db_columns": "*", 
+        "db_where_clause": "1=1"
+    },
+    "target_type": "hdfs", 
+    "target_hdfs": {
+        "hdfs_tgt_dir": "/user/hadoop/check1",
+        "tgt_data_format_type": "text",
+        "compress_type": "gzip", 
+        "tgt_partition_columns":"cust_cat",
+        "txt_field_term": "~", 
+        "txt_line_term": "", 
+        "txt_enclose": "",
+        "txt_escape": "",
+        "hdfs_load_type": "overwrite" 
+    },
+    "target_hive": {
+        "hive_create_table": "Y", 
+        "hive_table_type": "external", 
+        "hive_schema": "", 
+        "hive_table": "edw__customer",
+        "hive_drop_table": "Y"
+    },      
+    "null_options": {
+        "null_str_replace": "", 
+        "null_nonstr_replace": ""
+    }, 
+    "is_incremental_flag": "N", 
+    "incremental_load": {
+        "increment_last_val": 0, 
+        "increment_col": "", 
+        "increment_type": "", 
+        "merge_key": ""
+    }, 
+    "parallelism": {
+        "num_mappers": "1", 
+        "db_split_columns": ""
+    }
+}
